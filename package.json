@@ -1,0 +1,25 @@
+{
+  "name": "test-config-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:config": "cd packages/eslint-config-test && npx tsc --build",
+    "build:plugin": "cd packages/eslint-plugin-test && npx tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@typescript-eslint/types": "^8.41.0",
+    "eslint": "8.57.1"
+  }
+}

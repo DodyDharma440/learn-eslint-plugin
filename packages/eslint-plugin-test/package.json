@@ -1,0 +1,32 @@
+{
+  "name": "eslint-plugin-test",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "npx tsc --build",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@typescript-eslint/utils": "7.13.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "7.13.0",
+    "@typescript-eslint/rule-tester": "7.13.0",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.57.1"
+  }
+}

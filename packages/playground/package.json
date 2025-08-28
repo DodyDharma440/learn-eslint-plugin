@@ -1,0 +1,19 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "eslint": "8.57.0",
+    "eslint-plugin-test": "file:../eslint-plugin-test"
+  },
+  "devDependencies": {
+    "jiti": "^2.5.1"
+  }
+}
