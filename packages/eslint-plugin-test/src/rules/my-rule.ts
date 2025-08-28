@@ -28,7 +28,6 @@ export const myRule = createRule({
             rangeStart,
             rangeStart + 3 /* 'var'.length */,
           ];
-          console.log("🚀 ~ range:", range);
 
           context.report({
             node,

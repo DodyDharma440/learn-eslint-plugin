@@ -14,6 +14,14 @@ const plugin: Plugin = {
     version: "0.0.1",
   },
   rules,
+  configs: {
+    recommended: {
+      rules: {
+        "test/my-rule": "error",
+        "test/no-inline-type": "error",
+      },
+    },
+  },
 };
 
 export = plugin;

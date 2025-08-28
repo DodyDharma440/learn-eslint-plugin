@@ -3,8 +3,8 @@ module.exports = {
   plugins: ["test"],
   rules: {
     "no-unused-vars": "warn",
-    "test/my-rule": "error",
   },
+  extends: ["plugin:test/recommended"],
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
