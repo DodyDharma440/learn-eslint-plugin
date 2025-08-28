@@ -4,9 +4,17 @@ const example = <T>() => {
   return "hello" as T;
 };
 
-type SomeType = {
+interface Message {
   message: string;
-};
+}
+
+interface Hello {
+  hello: string;
+}
+
+type SomeType = Message & Hello;
+
+type SomeType2<T> = { value: T };
 
 // Bad
 example<{ message: string }>();
