@@ -1,21 +1,8 @@
 {
   "compilerOptions": {
-    "declaration": false,
-    "declarationMap": false,
-    "esModuleInterop": true,
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "sourceMap": false,
-    "target": "es2015",
     "outDir": "dist/"
   },
+  "extends": "../../tsconfig.base.json",
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.spec.ts"]
 }

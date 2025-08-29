@@ -1,6 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
-  "files": [],
   "references": [
     { "path": "packages/eslint-config-test" },
     { "path": "packages/eslint-plugin-test" }

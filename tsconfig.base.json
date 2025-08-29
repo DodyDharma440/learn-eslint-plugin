@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "sourceMap": true,
-    "strict": true,
-    "moduleResolution": "node",
+    "declaration": false,
+    "declarationMap": false,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-
-    // project references
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
-    "incremental": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "noEmitOnError": true
+    "strict": true,
+    "sourceMap": true,
+    "target": "es2015"
   }
 }
