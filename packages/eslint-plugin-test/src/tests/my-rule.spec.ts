@@ -2,8 +2,9 @@ import { RuleTester } from "@typescript-eslint/rule-tester";
 import { myRule } from "../rules/my-rule";
 
 const ruleTester = new RuleTester({
-  parser: "@typescript-eslint/parser",
+  parser: "vue-eslint-parser",
   parserOptions: {
+    parser: "@typescript-eslint/parser",
     ecmaFeatures: {
       jsx: false,
     },
@@ -11,22 +12,46 @@ const ruleTester = new RuleTester({
 });
 
 ruleTester.run("eslint-plugin/my-rule", myRule, {
-  valid: [{ code: `const x = 5;` }, { code: `let x = "hello";` }],
+  valid: [
+    {
+      code: `
+    <script setup lang="ts">const x = 5;</script>
+    <template>
+    <div>Hello world</div>
+    </template>
+    `,
+    },
+    {
+      code: `let x: string = "hello";`,
+    },
+  ],
   invalid: [
     {
-      code: `var z = 'foo'`,
-      output: `const z = 'foo'`,
+      code: `<script setup lang="ts">var x = 5;</script>
+    <template>
+    <div>Hello world</div>
+    </template>`,
+      output: `<script setup lang="ts">const x = 5;</script>
+    <template>
+    <div>Hello world</div>
+    </template>`,
       errors: [
         {
           messageId: "issue:var",
           suggestions: [
             {
               messageId: "fix:let",
-              output: `let z = 'foo'`,
+              output: `<script setup lang="ts">let x = 5;</script>
+    <template>
+    <div>Hello world</div>
+    </template>`,
             },
             {
               messageId: "fix:const",
-              output: `const z = 'foo'`,
+              output: `<script setup lang="ts">const x = 5;</script>
+    <template>
+    <div>Hello world</div>
+    </template>`,
             },
           ],
         },

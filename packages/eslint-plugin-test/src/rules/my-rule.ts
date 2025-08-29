@@ -1,4 +1,5 @@
-import { ESLintUtils } from "@typescript-eslint/utils";
+import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
+import { AST } from "vue-eslint-parser";
 
 export const createRule = ESLintUtils.RuleCreator(() => `https://google.com`);
 
@@ -20,32 +21,43 @@ export const myRule = createRule({
   },
   defaultOptions: [],
   create: (context) => {
-    return {
-      VariableDeclaration: (node) => {
-        if (node.kind === "var") {
-          const rangeStart = node.range[0];
-          const range: readonly [number, number] = [
-            rangeStart,
-            rangeStart + 3 /* 'var'.length */,
-          ];
-
-          context.report({
-            node,
-            messageId: "issue:var",
-            fix: (fixer) => fixer.replaceTextRange(range, "const"),
-            suggest: [
-              {
-                messageId: "fix:let",
-                fix: (fixer) => fixer.replaceTextRange(range, "let"),
-              },
-              {
-                messageId: "fix:const",
-                fix: (fixer) => fixer.replaceTextRange(range, "const"),
-              },
-            ],
-          });
-        }
+    return (
+      context.sourceCode.parserServices as any
+    )?.defineTemplateBodyVisitor(
+      // Event handlers for <template>.
+      {
+        VElement(): void {
+          //...
+        },
       },
-    };
+      // Event handlers for <script> or scripts. (optional)
+      {
+        VariableDeclaration: (node: AST.ESLintVariableDeclaration) => {
+          if (node.kind === "var") {
+            const rangeStart = node.range[0];
+            const range: readonly [number, number] = [
+              rangeStart,
+              rangeStart + 3 /* 'var'.length */,
+            ];
+
+            context.report({
+              node: node as TSESTree.Node,
+              messageId: "issue:var",
+              fix: (fixer) => fixer.replaceTextRange(range, "const"),
+              suggest: [
+                {
+                  messageId: "fix:let",
+                  fix: (fixer) => fixer.replaceTextRange(range, "let"),
+                },
+                {
+                  messageId: "fix:const",
+                  fix: (fixer) => fixer.replaceTextRange(range, "const"),
+                },
+              ],
+            });
+          }
+        },
+      }
+    );
   },
 });

@@ -19,14 +19,19 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@typescript-eslint/project-service": "^8.41.0",
+    "@typescript-eslint/tsconfig-utils": "^8.41.0",
     "@typescript-eslint/utils": "7.13.0"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "7.13.0",
     "@typescript-eslint/rule-tester": "7.13.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "vue-eslint-parser": "9.4.2"
   },
   "peerDependencies": {
-    "eslint": ">=8.57.1"
+    "eslint": ">=8.57.1",
+    "vue-eslint-parser": ">=9.4.2",
+    "@typescript-eslint/parser": ">=7.13.0"
   }
 }

@@ -18,5 +18,9 @@
   "description": "",
   "dependencies": {
     "eslint-plugin-test": "^1.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.41.0",
+    "vue-eslint-parser": "9.4.2"
   }
 }
