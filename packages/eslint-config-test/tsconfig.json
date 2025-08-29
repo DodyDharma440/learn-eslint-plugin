@@ -1,8 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src"
-  },
-  "references": [{ "path": "../eslint-plugin-test" }]
+    "outDir": "dist/"
+  }
 }

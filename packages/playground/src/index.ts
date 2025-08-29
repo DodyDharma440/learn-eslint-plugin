@@ -13,6 +13,9 @@ interface Hello {
 }
 
 type SomeType = Message & Hello;
+interface SomeInterface {
+  hello: "world";
+}
 
 type SomeType2<T> = { value: T };
 
@@ -21,3 +24,4 @@ example<{ message: string }>();
 
 // Good
 example<SomeType>();
+example<SomeInterface>();
