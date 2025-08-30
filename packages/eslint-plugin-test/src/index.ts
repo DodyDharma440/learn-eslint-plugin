@@ -20,6 +20,7 @@ const plugin: Plugin = {
         "test/my-rule": "error",
         "test/no-inline-type": "error",
         "test/prefer-interface-object": "warn",
+        "test/no-fetch-component": "error",
       },
     },
   },

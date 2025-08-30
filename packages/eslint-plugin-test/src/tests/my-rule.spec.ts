@@ -1,15 +1,7 @@
-import { RuleTester } from "@typescript-eslint/rule-tester";
 import { myRule } from "../rules/my-rule";
+import { createVueTester } from "../utils/tester";
 
-const ruleTester = new RuleTester({
-  parser: "vue-eslint-parser",
-  parserOptions: {
-    parser: "@typescript-eslint/parser",
-    ecmaFeatures: {
-      jsx: false,
-    },
-  },
-});
+const ruleTester = createVueTester();
 
 ruleTester.run("eslint-plugin/my-rule", myRule, {
   valid: [
