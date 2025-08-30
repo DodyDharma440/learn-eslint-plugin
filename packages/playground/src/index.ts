@@ -1,3 +1,5 @@
+import { $fetch } from "ofetch";
+
 var abc = "hello";
 
 const example = <T>() => {
@@ -25,3 +27,5 @@ example<{ message: string }>();
 // Good
 example<SomeType>();
 example<SomeInterface>();
+
+$fetch("");

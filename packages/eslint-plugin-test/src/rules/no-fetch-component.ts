@@ -19,6 +19,12 @@ export const noFetchComponent = createRule({
   },
   defaultOptions: [],
   create: (context) => {
+    const filename = context.filename;
+
+    if (!filename.endsWith(".vue")) {
+      return {};
+    }
+
     return (
       context.sourceCode.parserServices as any
     )?.defineTemplateBodyVisitor(

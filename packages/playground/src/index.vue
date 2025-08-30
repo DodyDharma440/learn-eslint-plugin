@@ -15,4 +15,7 @@ example<Example>({ message: "Hello World" });
 
 <template>
   <div>{{ example({ message: "String" }) }}</div>
+  <NuxtLink :to="'/'">Some Link</NuxtLink>
+  <NuxtLink :to="'/'">Some Link</NuxtLink>
+  <nuxt-link href="" class=""></nuxt-link>
 </template>

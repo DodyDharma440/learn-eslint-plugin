@@ -21,6 +21,7 @@ const plugin: Plugin = {
         "test/no-inline-type": "error",
         "test/prefer-interface-object": "warn",
         "test/no-fetch-component": "error",
+        "test/no-href-nuxt-link": "warn",
       },
     },
   },
