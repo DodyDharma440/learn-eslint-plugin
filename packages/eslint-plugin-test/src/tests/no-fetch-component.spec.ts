@@ -28,6 +28,7 @@ ruleTester.run("eslint-plugin/no-fetch-component", noFetchComponent, {
   ],
   invalid: [
     {
+      filename: "index.vue",
       code: `
         <script setup lang="ts">
         const res = await $fetch('https://...'); 
@@ -39,6 +40,7 @@ ruleTester.run("eslint-plugin/no-fetch-component", noFetchComponent, {
       errors: [{ messageId: "issue:no-fetch" }],
     },
     {
+      filename: "index.vue",
       code: `
         <script setup lang="ts">
         const res = $fetch('https://...'); 
@@ -50,6 +52,7 @@ ruleTester.run("eslint-plugin/no-fetch-component", noFetchComponent, {
       errors: [{ messageId: "issue:no-fetch" }],
     },
     {
+      filename: "index.vue",
       code: `
         <script setup lang="ts">
         const res = useAsyncData(() => $fetch('https://...'))
