@@ -3,7 +3,7 @@ import { createVueTester } from "../utils/tester";
 
 const ruleTester = createVueTester();
 
-ruleTester.run("eslint-plugin/no-fetch-component", noFetchComponent, {
+ruleTester.run("no-fetch-component", noFetchComponent, {
   valid: [
     {
       code: `

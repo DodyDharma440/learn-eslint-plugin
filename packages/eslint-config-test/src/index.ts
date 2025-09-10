@@ -1,7 +1,6 @@
 import { ESLint } from "eslint";
 
 const eslintConfig: ESLint.ConfigData = {
-  parser: "@typescript-eslint/parser",
   plugins: ["test"],
   rules: {
     "no-unused-vars": "warn",

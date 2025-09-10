@@ -10,7 +10,7 @@ interface Example {
   message: string;
 }
 
-example<Example>({ message: "Hello World" });
+example<{ message: string }>({ message: "Hello World" });
 </script>
 
 <template>

@@ -3,7 +3,7 @@ import { createVueTester } from "../utils/tester";
 
 const ruleTester = createVueTester();
 
-ruleTester.run("eslint-plugin/my-rule", myRule, {
+ruleTester.run("my-rule", myRule, {
   valid: [
     {
       code: `

@@ -1,10 +1,11 @@
-import { RuleTester, RuleTesterConfig } from "@typescript-eslint/rule-tester";
+import { defineConfig } from "eslint/config";
+import testConfig from "eslint-config-test/flat";
 import vueParser from "vue-eslint-parser";
 import tsParser from "@typescript-eslint/parser";
 
-export const createVueTester = (config?: RuleTesterConfig) => {
-  return new RuleTester({
-    ...config,
+export default defineConfig([
+  {
+    ...testConfig,
     languageOptions: {
       parser: vueParser,
       parserOptions: {
@@ -13,7 +14,6 @@ export const createVueTester = (config?: RuleTesterConfig) => {
           jsx: false,
         },
       },
-      ...config?.languageOptions,
     },
-  });
-};
+  },
+]);

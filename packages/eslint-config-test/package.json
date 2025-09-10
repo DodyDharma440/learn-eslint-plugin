@@ -4,12 +4,14 @@
   "type": "commonjs",
   "main": "dist/index.js",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./flat": "./dist/flat.js"
   },
   "files": [
     "dist"
   ],
   "scripts": {
+    "prebuild": "rm -rf dist",
     "build": "npx tsc --build"
   },
   "keywords": [],
@@ -19,8 +21,5 @@
   "dependencies": {
     "eslint-plugin-test": "^1.0.0"
   },
-  "devDependencies": {
-    "@typescript-eslint/parser": "^8.41.0",
-    "vue-eslint-parser": "9.4.2"
-  }
+  "devDependencies": {}
 }

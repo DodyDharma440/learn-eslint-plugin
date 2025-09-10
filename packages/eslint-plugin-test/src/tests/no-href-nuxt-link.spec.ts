@@ -3,7 +3,7 @@ import { createVueTester } from "../utils/tester";
 
 const ruleTester = createVueTester();
 
-ruleTester.run("eslint-plugin/no-href-nuxt-link", noHrefNuxtLink, {
+ruleTester.run("no-href-nuxt-link", noHrefNuxtLink, {
   valid: [
     {
       code: `

@@ -1,16 +1,19 @@
 import { RuleTester } from "@typescript-eslint/rule-tester";
 import { noInlineType } from "../rules/no-inline-type";
+import tsParser from "@typescript-eslint/parser";
 
 const ruleTester = new RuleTester({
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: false,
+  languageOptions: {
+    parser: tsParser,
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: false,
+      },
     },
   },
 });
 
-ruleTester.run("eslint-plugin/no-inline-type", noInlineType, {
+ruleTester.run("no-inline-type", noInlineType, {
   valid: [{ code: "example<SomeType>();" }, { code: "example<string>();" }],
   invalid: [
     {
