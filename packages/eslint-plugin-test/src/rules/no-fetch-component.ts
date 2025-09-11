@@ -1,5 +1,5 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import { AST } from "vue-eslint-parser";
+import { withTemplateVisitor } from "../utils/rule";
 
 export const createRule = ESLintUtils.RuleCreator(
   () => `https://my-docs.com/no-fetch-component`
@@ -25,12 +25,9 @@ export const noFetchComponent = createRule({
       return {};
     }
 
-    return (
-      context.sourceCode.parserServices as any
-    )?.defineTemplateBodyVisitor(
-      {},
-      {
-        CallExpression(node: AST.ESLintCallExpression) {
+    return withTemplateVisitor(context, {
+      script: {
+        CallExpression(node) {
           if (
             node.callee.type === "Identifier" &&
             node.callee.name === "$fetch"
@@ -41,7 +38,7 @@ export const noFetchComponent = createRule({
             });
           }
         },
-      }
-    );
+      },
+    });
   },
 });

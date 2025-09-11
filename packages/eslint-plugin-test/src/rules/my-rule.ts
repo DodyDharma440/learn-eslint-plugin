@@ -1,5 +1,5 @@
 import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import { AST } from "vue-eslint-parser";
+import { withTemplateVisitor } from "../utils/rule";
 
 export const createRule = ESLintUtils.RuleCreator(() => `https://google.com`);
 
@@ -21,18 +21,9 @@ export const myRule = createRule({
   },
   defaultOptions: [],
   create: (context) => {
-    return (
-      context.sourceCode.parserServices as any
-    )?.defineTemplateBodyVisitor(
-      // Event handlers for <template>.
-      {
-        VElement(): void {
-          //...
-        },
-      },
-      // Event handlers for <script> or scripts. (optional)
-      {
-        VariableDeclaration: (node: AST.ESLintVariableDeclaration) => {
+    return withTemplateVisitor(context, {
+      script: {
+        VariableDeclaration: (node) => {
           if (node.kind === "var") {
             const rangeStart = node.range[0];
             const range: readonly [number, number] = [
@@ -57,7 +48,7 @@ export const myRule = createRule({
             });
           }
         },
-      }
-    );
+      },
+    });
   },
 });
