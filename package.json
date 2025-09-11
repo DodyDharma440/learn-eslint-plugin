@@ -11,7 +11,8 @@
   "license": "ISC",
   "description": "",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "docs"
   ],
   "devDependencies": {
     "@types/eslint": "^9.6.1",
