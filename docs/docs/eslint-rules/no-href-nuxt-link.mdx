@@ -1,0 +1,55 @@
+# no-href-nuxt-link
+
+Don't use `href` attribute in `<NuxtLink>` or `<nuxt-link>` components — use `to` instead.
+
+## Rule Details
+
+This rule enforces the correct usage of Nuxt’s `<NuxtLink>` component by disallowing the href attribute, which is invalid for this component. The correct prop to use is to.
+
+Using href on `<NuxtLink>`:
+
+- May interfere with route prefetching and performance optimizations
+- Is simply incorrect — NuxtLink expects `to`, not `href`
+
+This rule automatically fixes `href` → `to`.
+
+## Examples
+
+### Correct Code ✅
+
+```html
+<template>
+  <NuxtLink href="/about">About</NuxtLink>
+  <nuxt-link :href="dynamicRoute">Dynamic</nuxt-link>
+  <NuxtLink v-bind:href="`/user/${id}`">Profile</NuxtLink>
+</template>
+```
+
+### Incorrect Code ❌
+
+```html
+<template>
+  <NuxtLink to="/about">About</NuxtLink>
+  <nuxt-link :to="dynamicRoute">Dynamic</nuxt-link>
+  <NuxtLink v-bind:to="`/user/${id}`">Profile</NuxtLink>
+</template>
+```
+
+## Auto Fix
+
+This rule is auto-fixable. Running ESLint with the --fix flag will automatically replace:
+
+- `href` → `to`
+- `:href` → `:to`
+- `v-bind:href` → `v-bind:to`
+
+## When Not To Use It
+
+You should always use to with `<NuxtLink>`. There is no valid reason to use href on this component.
+
+If you need an actual `<a href>` tag (e.g., for external links or when intentionally triggering a full page reload), use a plain `<a>` tag instead:
+
+```html
+<!-- ✅ Correct for external links -->
+<a href="https://example.com" target="_blank" rel="noopener">External</a>
+```

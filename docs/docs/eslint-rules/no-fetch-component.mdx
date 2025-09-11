@@ -1,0 +1,63 @@
+# no-fetch-component
+
+Avoid calling `$fetch` directly inside Vue components.
+
+## Rule Details
+
+This rule prevents the use of `$fetch` directly within Vue component files (.vue). It encourages moving data-fetching logic outside of components — for example, into composables, services, or stores — to improve testability, reusability, and separation of concerns.
+
+Calling `$fetch` directly in components can lead to:
+
+- Hard-to-test components due to embedded side effects
+- Duplicated logic across components
+- Tight coupling between UI and data-fetching implementation
+
+## Examples
+
+### Incorrect Code ❌
+
+```html
+<script setup lang="ts">
+  const data = await $fetch("/api/user");
+</script>
+
+<template>
+  <div>{{ data.name }}</div>
+</template>
+```
+
+### Correct Code ✅
+
+```html
+<script setup>
+  import { useUser } from "@/composables/useUser";
+
+  const { data } = useUser();
+</script>
+
+<template>
+  <div>{{ data?.name }}</div>
+</template>
+```
+
+And in `@/composables/useUser.ts`:
+
+```ts
+export function useUser() {
+  const { data } = await useAsyncData("user", () => $fetch("/api/user"));
+  return { data };
+}
+```
+
+## When Not To Use It
+
+You may disable this rule if:
+
+- You are working on a small prototype or demo where simplicity is prioritized over architecture
+- You are using a framework or pattern that explicitly encourages `$fetch` in components (e.g., Nuxt’s useAsyncData already wraps`$fetch` appropriately — ensure you’re not calling bare `$fetch`)
+
+:::note Note
+
+This rules only works on .vue files
+
+:::

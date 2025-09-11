@@ -1,0 +1,58 @@
+# prefer-interface-object
+
+Use `interface` instead of `type` when defining object shapes.
+
+## Rule Details
+This rule enforces using interface over type for object literal type definitions. While both can define object shapes, interface is preferred because:
+
+- Interfaces are more extensible (can be merged/extended)
+- Better error messages in TypeScript compiler
+- More idiomatic for object contracts in TypeScript
+- Supports declaration merging (useful in libraries and large codebases)
+
+This rule flags:
+
+- type aliases that directly define an object literal (`{ ... }`)
+- type aliases that include object literals in intersections (e.g., `type A = { id: number } & OtherType`)
+
+## Examples
+
+### Incorrect Code ❌
+```ts
+type User = {
+  id: number;
+  name: string;
+};
+
+type Admin = {
+  permissions: string[];
+} & User;
+
+type Config = {} & {
+  apiUrl: string;
+};
+```
+### Correct Code ✅
+
+```ts
+interface User {
+  id: number;
+  name: string;
+}
+
+interface Admin extends User {
+  permissions: string[];
+}
+
+interface Config {
+  apiUrl: string;
+}
+```
+
+## When Not To Use It
+You should still use type for:
+
+- Union types: type Status = `'active' | 'inactive'`
+- Tuple types: type Point = `[number, number]`
+- Conditional types: `type IsString<T> = T extends string ? true : false`
+- Complex utility types that can't be expressed with interfaces

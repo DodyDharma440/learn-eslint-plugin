@@ -1,0 +1,54 @@
+# no-inline-type
+
+Prefer not to use inline type definitions in generic type parameters.
+
+## Rule Details
+
+This rule detects and disallows inline object type literals (e.g., `{ id: number; name: string }`) passed directly as generic type arguments. Instead, it encourages extracting types into named interfaces or type aliases for better reusability, readability, and maintainability.
+
+Inline types in generics can lead to:
+
+- Code duplication
+- Reduced type reusability
+- Harder-to-read code
+- Difficulty in testing and mocking
+
+## Examples
+
+### Incorrect Code ❌
+
+```ts
+// Inline type literal in generic
+const result = fetchData<{ id: number; name: string }>(url);
+
+// Inline type with multiple properties
+const users = processList<{ 
+  email: string; 
+  isActive: boolean; 
+  roles: string[] 
+}>(data);
+```
+### Correct Code ✅
+```ts
+// Extract to named type
+interface User {
+  id: number;
+  name: string;
+}
+
+const result = fetchData<User>(url);
+```
+
+:::tip Tip
+
+For object shapes, prefer interface over type alias. See our [prefer-interface-object](prefer-interface-object.mdx) rule for details.
+
+:::
+
+## When Not To Use It
+
+You might want to disable this rule when:
+
+- Working with very simple, one-off types that are unlikely to be reused
+- Using utility types like `Partial<{...}>`, `Pick<{...}>`, etc. (consider adding exceptions for these in future versions)
+- Prototyping or writing tests where quick inline types are acceptable
