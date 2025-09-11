@@ -1,9 +1,5 @@
-import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import { withTemplateVisitor } from "../utils/rule";
-
-export const createRule = ESLintUtils.RuleCreator(
-  () => `https://my-docs.com/no-fetch-component`
-);
+import { TSESTree } from "@typescript-eslint/utils";
+import { createRule, withTemplateVisitor } from "../utils/rule";
 
 export const noFetchComponent = createRule({
   name: "no-fetch-component",

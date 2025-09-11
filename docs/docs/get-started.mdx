@@ -4,15 +4,18 @@ sidebar_position: 1
 
 # Get Started
 
-Let's discover **Docusaurus in less than 5 minutes**.
-
 ## Quick Start
 
-Make sure ESLint module in your Nuxt.js is already added.
+:::info Info
+
+Make sure [ESLint module](https://nuxt.com/modules/eslint) in your Nuxt.js is already added.
+
+:::
+
 
 ### Install the package
 
-```
+```bash
 npm install -D eslint-plugin-test eslint-config-test
 
 //or
@@ -22,8 +25,7 @@ yarn add -D eslint-plugin-test eslint-config-test
 
 ### Import configuration
 
-```
-// eslint.config.mjs
+```ts title="eslint.config.mjs"
 ...
 import testConfig from "eslint-config-test/flat";
 ...

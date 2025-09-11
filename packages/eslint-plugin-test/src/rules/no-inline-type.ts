@@ -1,8 +1,4 @@
-import { ESLintUtils } from "@typescript-eslint/utils";
-
-export const createRule = ESLintUtils.RuleCreator(
-  () => `https://my-docs.com/no-inline-type`
-);
+import { createRule } from "../utils/rule";
 
 export const noInlineType = createRule({
   name: "no-inline-type",

@@ -1,10 +1,5 @@
-import { ESLintUtils } from "@typescript-eslint/utils";
 import { AST } from "vue-eslint-parser";
-import { withTemplateVisitor } from "../utils/rule";
-
-export const createRule = ESLintUtils.RuleCreator(
-  () => `https://my-docs.com/no-href-nuxt-link`
-);
+import { createRule, withTemplateVisitor } from "../utils/rule";
 
 export const noHrefNuxtLink = createRule({
   name: "no-href-nuxt-link",

@@ -2267,7 +2267,9 @@ eslint-config-flat-gitignore@^2.1.0:
   version "1.0.0"
   resolved "file:../../packages/eslint-config-test"
   dependencies:
+    "@typescript-eslint/parser" "^8.43.0"
     eslint-plugin-test "^1.0.0"
+    vue-eslint-parser "^10.2.0"
 
 eslint-flat-config-utils@^2.1.1:
   version "2.1.1"

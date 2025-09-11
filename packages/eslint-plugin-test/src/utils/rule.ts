@@ -19,3 +19,7 @@ export const withTemplateVisitor = <C extends RuleContext<any, []>>(
   }
   return script ?? {};
 };
+
+export const createRule = ESLintUtils.RuleCreator(
+  (name) => `https://learn-eslint-plugin.vercel.app/docs/eslint-rules/${name}`
+);

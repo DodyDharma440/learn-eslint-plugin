@@ -1,7 +1,5 @@
-import { ESLintUtils, TSESTree } from "@typescript-eslint/utils";
-import { withTemplateVisitor } from "../utils/rule";
-
-export const createRule = ESLintUtils.RuleCreator(() => `https://google.com`);
+import { TSESTree } from "@typescript-eslint/utils";
+import { createRule, withTemplateVisitor } from "../utils/rule";
 
 export const myRule = createRule({
   name: "my-rule",
