@@ -19,7 +19,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "eslint-plugin-test": "^1.0.0"
+    "@typescript-eslint/parser": "^8.43.0",
+    "eslint-plugin-test": "^1.0.0",
+    "vue-eslint-parser": "^10.2.0"
   },
   "devDependencies": {}
 }

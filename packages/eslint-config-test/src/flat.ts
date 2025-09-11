@@ -6,11 +6,12 @@ const eslintConfig: Linter.Config = {
   plugins: {
     test: pluginTest,
   },
+  ...pluginTest.configs.recommended,
   rules: {
     "no-unused-vars": "warn",
     "no-use-before-define": "error",
+    ...pluginTest.configs.recommended.rules,
   },
-  ...pluginTest.configs.recommended,
 };
 
 export = eslintConfig;
