@@ -11,8 +11,8 @@
   "description": "",
   "dependencies": {
     "eslint": "8.57.0",
-    "eslint-config-test": "file:../../packages/eslint-config-test",
-    "eslint-plugin-test": "file:../../packages/eslint-plugin-test",
+    "@dodidharma/eslint-config-test": "file:../../packages/eslint-config-test",
+    "@dodidharma/eslint-plugin-test": "file:../../packages/eslint-plugin-test",
     "eslint-plugin-vue": "^10.4.0",
     "ofetch": "^1.4.1",
     "vue": "^3.5.20"

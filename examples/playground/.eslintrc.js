@@ -1,5 +1,5 @@
 module.exports = {
-  extends: "test",
+  extends: "@dodidharma/test",
   parser: "vue-eslint-parser",
   plugins: ["vue"],
   parserOptions: {

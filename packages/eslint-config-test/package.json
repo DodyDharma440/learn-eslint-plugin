@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-test",
+  "name": "@dodidharma/eslint-config-test",
   "version": "1.0.0",
   "type": "commonjs",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
   "description": "",
   "dependencies": {
     "@typescript-eslint/parser": "^8.43.0",
-    "eslint-plugin-test": "^1.0.0",
+    "@dodidharma/eslint-plugin-test": "^1.0.0",
     "vue-eslint-parser": "^10.2.0"
   },
   "devDependencies": {}

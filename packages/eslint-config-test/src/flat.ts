@@ -1,10 +1,10 @@
 import { Linter } from "eslint";
-import pluginTest from "eslint-plugin-test";
+import pluginTest from "@dodidharma/eslint-plugin-test";
 
 const eslintConfig: Linter.Config = {
   files: ["**/*.ts", "**/*.vue"],
   plugins: {
-    test: pluginTest,
+    "@dodidharma/test": pluginTest,
   },
   ...pluginTest.configs.recommended,
   rules: {

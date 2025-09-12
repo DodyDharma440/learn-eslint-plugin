@@ -19,7 +19,6 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "eslint-config-test": "file:../../packages/eslint-config-test",
-    "eslint-plugin-test": "file:../../packages/eslint-plugin-test"
+    "@dodidharma/eslint-config-test": "file:../../packages/eslint-config-test"
   }
 }

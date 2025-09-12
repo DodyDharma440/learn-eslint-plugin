@@ -262,6 +262,14 @@
   dependencies:
     mime "^3.0.0"
 
+"@dodidharma/eslint-config-test@file:../../packages/eslint-config-test":
+  version "1.0.0"
+  resolved "file:../../packages/eslint-config-test"
+  dependencies:
+    "@dodidharma/eslint-plugin-test" "^1.0.0"
+    "@typescript-eslint/parser" "^8.43.0"
+    vue-eslint-parser "^10.2.0"
+
 "@es-joy/jsdoccomment@~0.56.0":
   version "0.56.0"
   resolved "https://registry.npmjs.org/@es-joy/jsdoccomment/-/jsdoccomment-0.56.0.tgz"
@@ -2263,14 +2271,6 @@ eslint-config-flat-gitignore@^2.1.0:
   dependencies:
     "@eslint/compat" "^1.2.5"
 
-"eslint-config-test@file:../../packages/eslint-config-test":
-  version "1.0.0"
-  resolved "file:../../packages/eslint-config-test"
-  dependencies:
-    "@typescript-eslint/parser" "^8.43.0"
-    eslint-plugin-test "^1.0.0"
-    vue-eslint-parser "^10.2.0"
-
 eslint-flat-config-utils@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npmjs.org/eslint-flat-config-utils/-/eslint-flat-config-utils-2.1.1.tgz"
@@ -2342,14 +2342,6 @@ eslint-plugin-regexp@^2.10.0:
     refa "^0.12.1"
     regexp-ast-analysis "^0.7.1"
     scslre "^0.3.0"
-
-"eslint-plugin-test@file:../../packages/eslint-plugin-test":
-  version "1.0.0"
-  resolved "file:../../packages/eslint-plugin-test"
-  dependencies:
-    "@typescript-eslint/project-service" "^8.41.0"
-    "@typescript-eslint/tsconfig-utils" "^8.41.0"
-    "@typescript-eslint/utils" "^8.43.0"
 
 eslint-plugin-unicorn@^60.0.0:
   version "60.0.0"
