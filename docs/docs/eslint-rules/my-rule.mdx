@@ -1,0 +1,43 @@
+# my-rule
+
+Prefer using `let` or `const` over `var` for variable declarations.
+
+## Rule Details
+
+This rule flags all `var` variable declarations and suggests replacing them with either `let` or `const`.
+Using `let` and `const` is generally preferred in modern JavaScript because:
+
+- They have block scope (unlike var which has function scope)
+- They help prevent common bugs related to variable hoisting
+- `const` enforces immutability of variable binding, making code more predictable
+
+## Examples
+
+### Incorrect Code ❌
+
+```js
+var name = "John";
+var count = 0;
+var items = [];
+```
+
+### Correct Code ✅
+
+```js
+const name = "John";
+let count = 0;
+const items = [];
+```
+
+## Auto-fix and Suggestions
+
+This rule provides automatic fixes and suggestions:
+
+- Auto-fix: By default, the rule will automatically replace `var` with `const`
+- Suggestions:
+  - Replace with `let` (if the variable needs to be reassigned)
+  - Replace with `const` (if the variable should remain constant)
+
+## When Not To Use It
+
+If you need to support very old JavaScript environments that don't support let and const, you might want to disable this rule. However, most modern projects and build tools (like Babel) handle this compatibility automatically.

@@ -1,3 +1,4 @@
+import { ESLint } from "eslint";
 import { myRule } from "./my-rule";
 import { noFetchComponent } from "./no-fetch-component";
 import { noHrefNuxtLink } from "./no-href-nuxt-link";
@@ -10,4 +11,4 @@ export const rules = {
   "prefer-interface-object": preferInterfaceObject,
   "no-fetch-component": noFetchComponent,
   "no-href-nuxt-link": noHrefNuxtLink,
-};
+} as unknown as ESLint.Plugin["rules"];

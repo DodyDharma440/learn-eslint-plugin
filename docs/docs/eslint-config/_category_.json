@@ -1,0 +1,8 @@
+{
+  "label": "ESLint Config",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Understand about configuration diff between ESLint 8 (or earlier) and ESLint 9"
+  }
+}

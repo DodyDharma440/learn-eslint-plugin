@@ -1,12 +1,11 @@
-import { ESLint } from "eslint";
+import { ESLint, Linter } from "eslint";
 import { rules } from "./rules";
-import { RuleModule } from "@typescript-eslint/utils/ts-eslint";
 
-type RuleKey = keyof typeof rules;
-
-interface Plugin extends Omit<ESLint.Plugin, "rules"> {
-  rules: Record<RuleKey, RuleModule<any, any, any>>;
-}
+type Plugin = Omit<ESLint.Plugin, "configs"> & {
+  configs: ESLint.Plugin["configs"] & {
+    recommended: Linter.Config;
+  };
+};
 
 const plugin: Plugin = {
   meta: {

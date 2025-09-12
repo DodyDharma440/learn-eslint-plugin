@@ -1,16 +1,19 @@
 import { RuleTester } from "@typescript-eslint/rule-tester";
 import { preferInterfaceObject } from "../rules/prefer-interface-object";
+import tsParser from "@typescript-eslint/parser";
 
 const ruleTester = new RuleTester({
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: false,
+  languageOptions: {
+    parser: tsParser,
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: false,
+      },
     },
   },
 });
 
-ruleTester.run("eslint-plugin/prefer-interface-object", preferInterfaceObject, {
+ruleTester.run("prefer-interface-object", preferInterfaceObject, {
   valid: [
     "interface SomeInterface {};",
     "type SomeType = 'foo' | 'bar';",

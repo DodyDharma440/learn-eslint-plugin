@@ -2,3 +2,5 @@ node_modules
 **/node_modules
 *.tsbuildinfo
 **/dist
+
+.DS_Store

@@ -1,8 +1,4 @@
-import { ESLintUtils } from "@typescript-eslint/utils";
-
-export const createRule = ESLintUtils.RuleCreator(
-  () => `https://my-docs.com/prefer-interface-object`
-);
+import { createRule } from "../utils/rule";
 
 export const preferInterfaceObject = createRule({
   name: "prefer-interface-object",
