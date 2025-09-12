@@ -9,18 +9,18 @@ type Plugin = Omit<ESLint.Plugin, "configs"> & {
 
 const plugin: Plugin = {
   meta: {
-    name: "eslint-plugin-test",
+    name: "@dodidharma/eslint-plugin-test",
     version: "0.0.1",
   },
   rules,
   configs: {
     recommended: {
       rules: {
-        "test/my-rule": "error",
-        "test/no-inline-type": "error",
-        "test/prefer-interface-object": "warn",
-        "test/no-fetch-component": "error",
-        "test/no-href-nuxt-link": "warn",
+        "@dodidharma/test/my-rule": "error",
+        "@dodidharma/test/no-inline-type": "error",
+        "@dodidharma/test/prefer-interface-object": "warn",
+        "@dodidharma/test/no-fetch-component": "error",
+        "@dodidharma/test/no-href-nuxt-link": "warn",
       },
     },
   },

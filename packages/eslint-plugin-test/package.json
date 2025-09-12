@@ -1,6 +1,6 @@
 {
-  "name": "eslint-plugin-test",
-  "version": "1.0.0",
+  "name": "@dodidharma/eslint-plugin-test",
+  "version": "1.0.1",
   "type": "commonjs",
   "main": "dist/index.js",
   "exports": {
