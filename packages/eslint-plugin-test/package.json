@@ -1,11 +1,16 @@
 {
   "name": "@dodidharma/eslint-plugin-test",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "commonjs",
   "main": "dist/index.js",
   "exports": {
     ".": "./dist/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DodyDharma440/learn-eslint-plugin.git"
+  },
+  "homepage": "https://learn-eslint-plugin.vercel.app/",
   "files": [
     "dist"
   ],
@@ -15,9 +20,9 @@
     "test": "vitest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Dodi Aditya",
+  "license": "MIT",
+  "description": "Example ESLint plugin to learn how to create custom rule",
   "dependencies": {
     "@typescript-eslint/project-service": "^8.41.0",
     "@typescript-eslint/tsconfig-utils": "^8.41.0",

@@ -16,18 +16,20 @@ Make sure [ESLint module](https://nuxt.com/modules/eslint) in your Nuxt.js is al
 ### Install the package
 
 ```bash
-npm install -D eslint-plugin-test eslint-config-test
+npm install -D @dodidharma/eslint-config-test
+```
 
-//or
+or with yarn
 
-yarn add -D eslint-plugin-test eslint-config-test
+```bash
+yarn add -D @dodidharma/eslint-config-test
 ```
 
 ### Import configuration
 
 ```ts title="eslint.config.mjs"
 ...
-import testConfig from "eslint-config-test/flat";
+import testConfig from "@dodidharma/eslint-config-test/flat";
 ...
 
 export default withNuxt([

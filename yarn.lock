@@ -3,7 +3,7 @@
 
 
 "@dodidharma/eslint-config-test@file:/Users/dodiaditya/Documents/Coding/Practice/eslint/test-config-plugin/packages/eslint-config-test":
-  version "1.0.1"
+  version "1.0.2"
   resolved "file:packages/eslint-config-test"
   dependencies:
     "@dodidharma/eslint-plugin-test" "^1.0.0"
@@ -11,7 +11,7 @@
     vue-eslint-parser "^10.2.0"
 
 "@dodidharma/eslint-plugin-test@^1.0.0", "@dodidharma/eslint-plugin-test@file:/Users/dodiaditya/Documents/Coding/Practice/eslint/test-config-plugin/packages/eslint-plugin-test":
-  version "1.0.1"
+  version "1.0.2"
   resolved "file:packages/eslint-plugin-test"
   dependencies:
     "@typescript-eslint/project-service" "^8.41.0"
