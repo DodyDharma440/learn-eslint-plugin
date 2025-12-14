@@ -262,10 +262,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@dodidharma/eslint-config-test@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dodidharma/eslint-config-test/-/eslint-config-test-1.0.1.tgz#5eeabde5cb735d2b29c543e32d21656e999e3075"
-  integrity sha512-M7wkbJJOMceZla5GkkrjfaD/5ZB6HBcRQ7Y6AC1byfdMvOcrGqUKeDHhCuwY1vvB5KgF71yORyvWSoM8G4h88w==
+"@dodidharma/eslint-config-test@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@dodidharma/eslint-config-test/-/eslint-config-test-1.0.2.tgz#f614531faff8f8add4b958ce396969792c701a0b"
+  integrity sha512-Nabo5OPMEdRK65Zhmpc5Yuf/DcWPGZWjzyca59k/bd9mHhw6sZugnZ1Ar1dagITWNivweqcriPsKRQmoq9uyLQ==
   dependencies:
     "@dodidharma/eslint-plugin-test" "^1.0.0"
     "@typescript-eslint/parser" "^8.43.0"
